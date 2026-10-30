@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài kiểm tra giữa kì I - Hóa học 12 - Mã đề 1302</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                packages: {'[+]': ['mhchem']}
+            },
+            loader: {load: ['[tex]/mhchem']}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #dbeafe;
+            background-image: url('./a.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        /* Toàn bộ trang dùng a.png; riêng khung đăng nhập dùng bt.png. */
+        #login-screen {
+            background-color: rgba(255, 255, 255, 0.70);
+            background-image: linear-gradient(rgba(255,255,255,.28), rgba(255,255,255,.28)), url('./bt.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Tăng độ tương phản chữ trên ảnh bt.png mà vẫn thấy rõ hình nền. */
+        #login-screen {
+            color: #0f172a;
+            border: 2px solid rgba(255,255,255,.85);
+            box-shadow: 0 18px 52px rgba(9,30,66,.34);
+        }
+        #login-screen h1,
+        #login-screen h2,
+        #login-screen > p {
+            width: fit-content;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 7px 14px;
+            border-radius: 12px;
+            background: rgba(255,255,255,.88);
+            box-shadow: 0 2px 12px rgba(15,23,42,.15);
+            text-shadow: none;
+        }
+        #login-screen h2 { color: #1743af; line-height: 1.5; }
+        #login-screen h1 { color: #0b1a33; line-height: 1.4; }
+        #login-screen > p { color: #192b45; font-weight: 700; }
+        #login-screen label.block {
+            display: inline-block;
+            width: fit-content;
+            padding: 4px 11px;
+            margin-bottom: 7px;
+            background: rgba(255,255,255,.91);
+            color: #0f274b;
+            border-radius: 8px;
+            font-weight: 700;
+            box-shadow: 0 1px 8px rgba(15,23,42,.15);
+        }
+        #login-screen input[type="text"] {
+            background-color: rgba(255,255,255,.97);
+            color: #0f172a;
+            border: 2px solid #a5b8d4;
+            font-weight: 600;
+            box-shadow: 0 2px 9px rgba(15,23,42,.12);
+        }
+        #login-screen input[type="text"]::placeholder {
+            color: #64748b;
+            font-weight: 500;
+            opacity: 1;
+        }
+        #login-screen button {
+            background-color: #174fe3;
+            box-shadow: 0 5px 15px rgba(20,58,150,.30);
+            font-weight: 800;
+            letter-spacing: .01em;
+        }
+        #login-screen button:hover { background-color: #123db5; }
+        #login-screen #login-error {
+            background: rgba(255,255,255,.95);
+            border-radius: 8px;
+            padding: 6px;
+            font-weight: 700;
+            color: #b91c1c;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        .radio-custom:checked + div {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+        .statement-radio:checked + div {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .timer-warning { color: #f59e0b; animation: pulse 2s infinite; }
+        .timer-danger { color: #ef4444; animation: pulse 1s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased relative pb-12">
+    <!-- Thầy Cường Watermark -->
+    <div class="fixed bottom-2 left-2 text-white/70 text-xs z-50 font-medium pointer-events-none">
+        Thầy Lê Nguyễn Cường
+    </div>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 pt-8">
+        
+        <!-- LOGIN SCREEN -->
+        <div id="login-screen" class="glass-panel rounded-2xl p-6 sm:p-8 max-w-xl mx-auto mt-20 transition-all duration-300">
+            <h2 class="text-sm md:text-base font-bold text-center text-blue-700 uppercase mb-2 tracking-wide">Trường THPT Thanh Thủy</h2>
+            <h1 class="tcontext-2xl font-bold text-center mb-6" style="color: #EA580C;">BÀI KIỂM TRA HÓA HỌC 12 - MÃ ĐỀ 1302</h1>
+            <p class="text-center text-gray-600 mb-6">Thời gian làm bài: 40 phút</p>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên học sinh</label>
+                    <input type="text" id="input-hoten" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Nhập đầy đủ họ và tên">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Lớp</label>
+                    <input type="text" id="input-lop" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Ví dụ: 12A6">
+                </div>
+                <div id="login-error" class="hidden text-red-500 text-sm text-center"></div>
+                <button onclick="handleStart()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors mt-4">
+                    Bắt đầu làm bài
+                </button>
+            </div>
+        </div>
+
+        <!-- LOADING SCREEN -->
+        <div id="loading-screen" class="hidden glass-panel rounded-2xl p-8 max-w-md mx-auto mt-20 text-center">
+            <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-blue-500 border-t-transparent mb-4"></div>
+            <p id="loading-text" class="text-gray-700 font-medium">Đang thiết lập đề thi...</p>
+        </div>
+
+        <!-- EXAM SCREEN -->
+        <div id="exam-screen" class="hidden">
+            <!-- Sticky Timer Header -->
+            <div class="sticky top-0 z-40 glass-panel rounded-xl p-4 mb-6 flex justify-between items-center shadow-md">
+                <div>
+                    <h2 class="font-bold text-gray-900 hidden sm:block">Hóa học 12</h2>
+                    <p class="text-sm text-gray-600" id="student-info-display"></p>
+                </div>
+                <div class="text-right flex items-center gap-4">
+                    <div class="text-sm font-medium text-gray-500">
+                        Đã làm: <span id="progress-text">0/28</span>
+                    </div>
+                    <div id="timer-display" class="text-2xl font-bold font-mono text-gray-800 bg-gray-100 px-3 py-1 rounded-lg">
+                        40:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Content Container -->
+            <div id="quiz-container" class="space-y-8"></div>
+
+            <!-- Submit Button -->
+            <div class="mt-8 mb-12 flex justify-center">
+                <button id="btn-submit" onclick="confirmSubmit()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-12 rounded-xl text-lg shadow-lg transition-transform transform hover:scale-105">
+                    Nộp Bài
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULT MODAL -->
+        <div id="result-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div class="glass-panel w-full max-w-lg rounded-2xl p-6 md:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Đã Nộp Bài!</h2>
+                    <p class="text-gray-600" id="result-student-info"></p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                    <div class="text-center mb-4">
+                        <p class="text-sm text-gray-500 uppercase font-semibold tracking-wide">Tổng Điểm</p>
+                        <p class="text-5xl font-bold text-blue-600" id="result-total-score">0.00<span class="text-2xl text-gray-400">/10</span></p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 text-center divide-x divide-gray-200 border-t border-gray-200 pt-4">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">PHẦN 1</p>
+                            <p class="font-bold text-gray-800" id="result-p1-score">0.00/4.5</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">PHẦN 2</p>
+                            <p class="font-bold text-gray-800" id="result-p2-score">0.00/4.0</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">PHẦN 3</p>
+                            <p class="font-bold text-gray-800" id="result-p3-score">0.00/1.5</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 text-sm text-gray-600 mb-8 p-4 bg-gray-50 rounded-lg">
+                    <p class="flex justify-between"><span>Thời gian vào làm:</span> <span id="result-start-time" class="font-medium text-gray-800"></span></p>
+                    <p class="flex justify-between"><span>Thời gian nộp:</span> <span id="result-submit-time" class="font-medium text-gray-800"></span></p>
+                    <p class="flex justify-between"><span>Tổng thời gian:</span> <span id="result-duration" class="font-medium text-gray-800"></span></p>
+                    <div class="border-t border-gray-200 my-2 pt-2"></div>
+                    <p id="result-sheet-status" class="flex justify-between items-center"></p>
+                    <p id="result-drive-status" class="flex justify-between items-center"></p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button onclick="revealAnswers()" class="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 px-4 rounded-xl transition-colors">
+                        Hiện đáp án chi tiết
+                    </button>
+                    <button onclick="logout()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-4 rounded-xl transition-colors">
+                        Đăng xuất
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // BẮT BUỘC THIẾT LẬP: Thay URL Web App vào biến dưới đây trước khi sử dụng.
+        const APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby3Wj4Gzb2-C0TRjxgSUueLdoqKpOAFTa1cH7ZGDdaYMjNw65bO7Zif0NQR4ykfl69d/exec";
+
+        const rawData = {
+    "title": "BÀI KIỂM TRA HÓA HỌC 12 - MÃ ĐỀ 1302",
+    "durationSeconds": 2400,
+    "part1": [
+        {
+            "id": "P1Q01",
+            "sourceNumber": 1,
+            "text": "Chất nào sau đây không phải là ester?",
+            "plainText": "Chất nào sau đây không phải là ester?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "HCOOCH<sub>3</sub>.",
+                    "plainText": "HCOOCH3."
+                },
+                {
+                    "key": "B",
+                    "text": "CH<sub>3</sub>COCH<sub>3</sub>.",
+                    "plainText": "CH3COCH3."
+                },
+                {
+                    "key": "C",
+                    "text": "CH<sub>3</sub>COOCH<sub>3</sub>.",
+                    "plainText": "CH3COOCH3."
+                },
+                {
+                    "key": "D",
+                    "text": "HCOOC<sub>6</sub>H<sub>5</sub>.",
+                    "plainText": "HCOOC6H5."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q02",
+            "sourceNumber": 2,
+            "text": "Ester no, đơn chức, mạch hở có công thức phân tử là",
+            "plainText": "Ester no, đơn chức, mạch hở có công thức phân tử là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "C<sub>n</sub>H<sub>2n</sub>O (n≥2).",
+                    "plainText": "CnH2nO (n≥2)."
+                },
+                {
+                    "key": "B",
+                    "text": "C<sub>n</sub>H<sub>n</sub>O<sub>3</sub> (n≥2).",
+                    "plainText": "CnHnO3 (n≥2)."
+                },
+                {
+                    "key": "C",
+                    "text": "C<sub>n</sub>H<sub>2n</sub>O<sub>2</sub> (n≥2).",
+                    "plainText": "CnH2nO2 (n≥2)."
+                },
+                {
+                    "key": "D",
+                    "text": "C<sub>n</sub>H<sub>2n</sub>O<sub>4</sub> (n≥2).",
+                    "plainText": "CnH2nO4 (n≥2)."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q03",
+            "sourceNumber": 3,
+            "text": "Xà phòng hóa CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub> trong dung dịch NaOH đun nóng, thu được muối có công thức là",
+            "plainText": "Xà phòng hóa CH3COOC2H5 trong dung dịch NaOH đun nóng, thu được muối có công thức là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "C<sub>2</sub>H<sub>5</sub>ONa.",
+                    "plainText": "C2H5ONa."
+                },
+                {
+                    "key": "B",
+                    "text": "C<sub>2</sub>H<sub>5</sub>COONa.",
+                    "plainText": "C2H5COONa."
+                },
+                {
+                    "key": "C",
+                    "text": "CH<sub>3</sub>COONa.",
+                    "plainText": "CH3COONa."
+                },
+                {
+                    "key": "D",
+                    "text": "HCOONa.",
+                    "plainText": "HCOONa."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q04",
+            "sourceNumber": 4,
+            "text": "Khi thuỷ phân chất béo trong môi trường kiềm, thu được muối của acid béo và",
+            "plainText": "Khi thuỷ phân chất béo trong môi trường kiềm, thu được muối của acid béo và",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "phenol.",
+                    "plainText": "phenol."
+                },
+                {
+                    "key": "B",
+                    "text": "glycerol.",
+                    "plainText": "glycerol."
+                },
+                {
+                    "key": "C",
+                    "text": "alcohol đơn chức.",
+                    "plainText": "alcohol đơn chức."
+                },
+                {
+                    "key": "D",
+                    "text": "ester đơn chức.",
+                    "plainText": "ester đơn chức."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q05",
+            "sourceNumber": 5,
+            "text": "Chất giặt rửa tổng hợp là",
+            "plainText": "Chất giặt rửa tổng hợp là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "muối sodium hoặc potassium của các acid béo.",
+                    "plainText": "muối sodium hoặc potassium của các acid béo."
+                },
+                {
+                    "key": "B",
+                    "text": "muối calcium của acid béo.",
+                    "plainText": "muối calcium của acid béo."
+                },
+                {
+                    "key": "C",
+                    "text": "muối của acid hữu cơ.",
+                    "plainText": "muối của acid hữu cơ."
+                },
+                {
+                    "key": "D",
+                    "text": "muối sodium alkyl sulfate hoặc alkylbezene sulfonate.",
+                    "plainText": "muối sodium alkyl sulfate hoặc alkylbezene sulfonate."
+                }
+            ],
+            "correctAnswer": "D"
+        },
+        {
+            "id": "P1Q06",
+            "sourceNumber": 6,
+            "text": "Carbohydrate nào sau đây thuộc loại polysaccharide?",
+            "plainText": "Carbohydrate nào sau đây thuộc loại polysaccharide?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Glucose.",
+                    "plainText": "Glucose."
+                },
+                {
+                    "key": "B",
+                    "text": "Tinh bột.",
+                    "plainText": "Tinh bột."
+                },
+                {
+                    "key": "C",
+                    "text": "Fructose.",
+                    "plainText": "Fructose."
+                },
+                {
+                    "key": "D",
+                    "text": "Maltose.",
+                    "plainText": "Maltose."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q07",
+            "sourceNumber": 7,
+            "text": "Chất nào sau đây không tham gia phản ứng thủy phân?",
+            "plainText": "Chất nào sau đây không tham gia phản ứng thủy phân?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Methyl acetate.",
+                    "plainText": "Methyl acetate."
+                },
+                {
+                    "key": "B",
+                    "text": "Saccharose.",
+                    "plainText": "Saccharose."
+                },
+                {
+                    "key": "C",
+                    "text": "Glucose.",
+                    "plainText": "Glucose."
+                },
+                {
+                    "key": "D",
+                    "text": "Triolein.",
+                    "plainText": "Triolein."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q08",
+            "sourceNumber": 8,
+            "text": "Khi thuỷ phân tinh bột trong xúc tác enzyme, không tạo ra sản phẩm nào sau đây?",
+            "plainText": "Khi thuỷ phân tinh bột trong xúc tác enzyme, không tạo ra sản phẩm nào sau đây?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Dextrin.",
+                    "plainText": "Dextrin."
+                },
+                {
+                    "key": "B",
+                    "text": "Glucose.",
+                    "plainText": "Glucose."
+                },
+                {
+                    "key": "C",
+                    "text": "Maltose.",
+                    "plainText": "Maltose."
+                },
+                {
+                    "key": "D",
+                    "text": "Saccharose.",
+                    "plainText": "Saccharose."
+                }
+            ],
+            "correctAnswer": "D"
+        },
+        {
+            "id": "P1Q09",
+            "sourceNumber": 9,
+            "text": "Cellulose tan được trong hoá chất nào sau đây?",
+            "plainText": "Cellulose tan được trong hoá chất nào sau đây?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Nước nóng.",
+                    "plainText": "Nước nóng."
+                },
+                {
+                    "key": "B",
+                    "text": "Nước Schweizer.",
+                    "plainText": "Nước Schweizer."
+                },
+                {
+                    "key": "C",
+                    "text": "Benzene.",
+                    "plainText": "Benzene."
+                },
+                {
+                    "key": "D",
+                    "text": "Ether.",
+                    "plainText": "Ether."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q10",
+            "sourceNumber": 10,
+            "text": "Chất nào sau đây thuộc loại amine bậc ba?",
+            "plainText": "Chất nào sau đây thuộc loại amine bậc ba?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "CH<sub>3</sub>NH<sub>2</sub>.",
+                    "plainText": "CH3NH2."
+                },
+                {
+                    "key": "B",
+                    "text": "(CH<sub>3</sub>)<sub>3</sub>N.",
+                    "plainText": "(CH3)3N."
+                },
+                {
+                    "key": "C",
+                    "text": "CH<sub>3</sub>NHCH<sub>3</sub>.",
+                    "plainText": "CH3NHCH3."
+                },
+                {
+                    "key": "D",
+                    "text": "CH<sub>3</sub>CH<sub>2</sub>NHCH<sub>3</sub>.",
+                    "plainText": "CH3CH2NHCH3."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q11",
+            "sourceNumber": 11,
+            "text": "Công thức phân tử của dimethylamine là",
+            "plainText": "Công thức phân tử của dimethylamine là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "C<sub>2</sub>H<sub>7</sub>N.",
+                    "plainText": "C2H7N."
+                },
+                {
+                    "key": "B",
+                    "text": "C<sub>3</sub>H<sub>9</sub>N.",
+                    "plainText": "C3H9N."
+                },
+                {
+                    "key": "C",
+                    "text": "C<sub>2</sub>H<sub>5</sub>N.",
+                    "plainText": "C2H5N."
+                },
+                {
+                    "key": "D",
+                    "text": "CH<sub>5</sub>N.",
+                    "plainText": "CH5N."
+                }
+            ],
+            "correctAnswer": "A"
+        },
+        {
+            "id": "P1Q12",
+            "sourceNumber": 12,
+            "text": "Methylamine (CH<sub>3</sub>NH<sub>2</sub>) tác dụng được với chất nào sau đây trong dung dịch?",
+            "plainText": "Methylamine (CH3NH2) tác dụng được với chất nào sau đây trong dung dịch?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "HCl.",
+                    "plainText": "HCl."
+                },
+                {
+                    "key": "B",
+                    "text": "NaCl.",
+                    "plainText": "NaCl."
+                },
+                {
+                    "key": "C",
+                    "text": "KNO<sub>3</sub>.",
+                    "plainText": "KNO3."
+                },
+                {
+                    "key": "D",
+                    "text": "KOH.",
+                    "plainText": "KOH."
+                }
+            ],
+            "correctAnswer": "A"
+        },
+        {
+            "id": "P1Q13",
+            "sourceNumber": 13,
+            "text": "Chất nào sau đây thuộc loại monosaccharide?",
+            "plainText": "Chất nào sau đây thuộc loại monosaccharide?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Saccharose.",
+                    "plainText": "Saccharose."
+                },
+                {
+                    "key": "B",
+                    "text": "Maltose.",
+                    "plainText": "Maltose."
+                },
+                {
+                    "key": "C",
+                    "text": "Cellulose.",
+                    "plainText": "Cellulose."
+                },
+                {
+                    "key": "D",
+                    "text": "Fructose.",
+                    "plainText": "Fructose."
+                }
+            ],
+            "correctAnswer": "D"
+        },
+        {
+            "id": "P1Q14",
+            "sourceNumber": 14,
+            "text": "Loại carbohydrate mạch phân nhánh, có nhiều trong các loại ngũ cốc là",
+            "plainText": "Loại carbohydrate mạch phân nhánh, có nhiều trong các loại ngũ cốc là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "cellulose.",
+                    "plainText": "cellulose."
+                },
+                {
+                    "key": "B",
+                    "text": "amylose.",
+                    "plainText": "amylose."
+                },
+                {
+                    "key": "C",
+                    "text": "amylopectin.",
+                    "plainText": "amylopectin."
+                },
+                {
+                    "key": "D",
+                    "text": "saccharose.",
+                    "plainText": "saccharose."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q15",
+            "sourceNumber": 15,
+            "text": "Cho các phát biểu sau:<br>(a) Glucose và maltose đều có nhóm -OH hemiacetal.<br>(b) Saccharose và maltose đều hòa tan được Cu(OH)<sub>2</sub> trong môi trường kiềm ở điều kiện thường.<br>(c) Maltose và saccharose đều là các hợp chất hữu cơ tạp chức.<br>(d) Maltose được cấu tạo từ 2 đơn vị glucose và fructose.<br>Số phát biểu đúng là",
+            "plainText": "Cho các phát biểu sau:\n(a) Glucose và maltose đều có nhóm -OH hemiacetal.\n(b) Saccharose và maltose đều hòa tan được Cu(OH)2 trong môi trường kiềm ở điều kiện thường.\n(c) Maltose và saccharose đều là các hợp chất hữu cơ tạp chức.\n(d) Maltose được cấu tạo từ 2 đơn vị glucose và fructose.\nSố phát biểu đúng là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "2.",
+                    "plainText": "2."
+                },
+                {
+                    "key": "B",
+                    "text": "3.",
+                    "plainText": "3."
+                },
+                {
+                    "key": "C",
+                    "text": "1.",
+                    "plainText": "1."
+                },
+                {
+                    "key": "D",
+                    "text": "4.",
+                    "plainText": "4."
+                }
+            ],
+            "correctAnswer": "B"
+        },
+        {
+            "id": "P1Q16",
+            "sourceNumber": 16,
+            "text": "Maltose là một loại disaccharide có nhiều trong mạch nha. Công thức phân tử của maltose là",
+            "plainText": "Maltose là một loại disaccharide có nhiều trong mạch nha. Công thức phân tử của maltose là",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>.",
+                    "plainText": "C6H12O6."
+                },
+                {
+                    "key": "B",
+                    "text": "(C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub>",
+                    "plainText": "(C6H10O5)n"
+                },
+                {
+                    "key": "C",
+                    "text": "C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>.",
+                    "plainText": "C12H22O11."
+                },
+                {
+                    "key": "D",
+                    "text": "C<sub>3</sub>H<sub>6</sub>O<sub>2</sub>.",
+                    "plainText": "C3H6O2."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q17",
+            "sourceNumber": 17,
+            "text": "Phản ứng nào sau đây chứng tỏ trong phân tử glucose có nhóm chức aldehyde?",
+            "plainText": "Phản ứng nào sau đây chứng tỏ trong phân tử glucose có nhóm chức aldehyde?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "Glucose phản ứng với copper(II) hydroxide ở nhiệt độ thường.",
+                    "plainText": "Glucose phản ứng với copper(II) hydroxide ở nhiệt độ thường."
+                },
+                {
+                    "key": "B",
+                    "text": "Lên men rượu glucose tạo thành ethanol.",
+                    "plainText": "Lên men rượu glucose tạo thành ethanol."
+                },
+                {
+                    "key": "C",
+                    "text": "Glucose phản ứng với thuốc thử Tollens.",
+                    "plainText": "Glucose phản ứng với thuốc thử Tollens."
+                },
+                {
+                    "key": "D",
+                    "text": "Lên men lactic glucose tạo thành lactic acid.",
+                    "plainText": "Lên men lactic glucose tạo thành lactic acid."
+                }
+            ],
+            "correctAnswer": "C"
+        },
+        {
+            "id": "P1Q18",
+            "sourceNumber": 18,
+            "text": "Nhỏ dung dịch methylamine vào dung dịch nào sau đây thấy xuất hiện kết tủa?",
+            "plainText": "Nhỏ dung dịch methylamine vào dung dịch nào sau đây thấy xuất hiện kết tủa?",
+            "options": [
+                {
+                    "key": "A",
+                    "text": "HCl.",
+                    "plainText": "HCl."
+                },
+                {
+                    "key": "B",
+                    "text": "FeCl<sub>3</sub>.",
+                    "plainText": "FeCl3."
+                },
+                {
+                    "key": "C",
+                    "text": "BaCl<sub>2</sub>.",
+                    "plainText": "BaCl2."
+                },
+                {
+                    "key": "D",
+                    "text": "NaCl.",
+                    "plainText": "NaCl."
+                }
+            ],
+            "correctAnswer": "B"
+        }
+    ],
+    "part2": [
+        {
+            "id": "P2Q01",
+            "sourceNumber": 1,
+            "text": "Glucose và fructose là carbohydrat, thuộc loại monosaccharide.",
+            "plainText": "Glucose và fructose là carbohydrat, thuộc loại monosaccharide.",
+            "statements": [
+                {
+                    "label": "a",
+                    "text": "Glucose và fructose đều không có phản ứng thủy phân.",
+                    "plainText": "Glucose và fructose đều không có phản ứng thủy phân.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "b",
+                    "text": "Glucose và fructose đều tồn tại chủ yếu ở dạng mạch vòng.",
+                    "plainText": "Glucose và fructose đều tồn tại chủ yếu ở dạng mạch vòng.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "c",
+                    "text": "Glucose, fructose đều tạo kết tủa đỏ gạch với Cu(OH)<sub>2</sub>/OH khi đun nóng.",
+                    "plainText": "Glucose, fructose đều tạo kết tủa đỏ gạch với Cu(OH)2/OH khi đun nóng.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "d",
+                    "text": "Glucose và fructose đều làm mất màu nước bromine.",
+                    "plainText": "Glucose và fructose đều làm mất màu nước bromine.",
+                    "correctAnswer": false
+                }
+            ]
+        },
+        {
+            "id": "P2Q02",
+            "sourceNumber": 2,
+            "text": "Khi con người sử dụng thức ăn chứa tinh bột, enzyme α-amylase có trong nước bọt thúc đẩy quá trình thuỷ phân tinh bột thành các phân tử nhỏ hơn gồm dextrin và maltose. Quá trình này tiếp tục ở ruột non, nơi phần lớn tinh bột bị thuỷ phân thành glucose. Glucose được hấp thụ vào máu và di chuyển đến các tế bào trong khắp cơ thể. Glucose có thể được sử dụng cho nhu cầu năng lượng hoặc có thể được chuyển đổi thành glycogen lưu trữ trong gan và cơ.",
+            "plainText": "Khi con người sử dụng thức ăn chứa tinh bột, enzyme α-amylase có trong nước bọt thúc đẩy quá trình thuỷ phân tinh bột thành các phân tử nhỏ hơn gồm dextrin và maltose. Quá trình này tiếp tục ở ruột non, nơi phần lớn tinh bột bị thuỷ phân thành glucose. Glucose được hấp thụ vào máu và di chuyển đến các tế bào trong khắp cơ thể. Glucose có thể được sử dụng cho nhu cầu năng lượng hoặc có thể được chuyển đổi thành glycogen lưu trữ trong gan và cơ.",
+            "statements": [
+                {
+                    "label": "a",
+                    "text": "Khi ăn cơm, nếu nhai kĩ sẽ thấy vị ngọt vì tinh bột bị thuỷ phân thành glucose.",
+                    "plainText": "Khi ăn cơm, nếu nhai kĩ sẽ thấy vị ngọt vì tinh bột bị thuỷ phân thành glucose.",
+                    "correctAnswer": false
+                },
+                {
+                    "label": "b",
+                    "text": "Tinh bột bị thủy phân bởi enzyme α-amylase hoặc môi trường acid.",
+                    "plainText": "Tinh bột bị thủy phân bởi enzyme α-amylase hoặc môi trường acid.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "c",
+                    "text": "Glucose chủ yếu đóng vai trò cung cấp năng lượng cho tế bào.",
+                    "plainText": "Glucose chủ yếu đóng vai trò cung cấp năng lượng cho tế bào.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "d",
+                    "text": "Glycogen lưu trữ trong gan và cơ, khi cần thiết có thể chuyển hoá thành glucose để cung cấp năng lượng cho cơ thể",
+                    "plainText": "Glycogen lưu trữ trong gan và cơ, khi cần thiết có thể chuyển hoá thành glucose để cung cấp năng lượng cho cơ thể",
+                    "correctAnswer": true
+                }
+            ]
+        },
+        {
+            "id": "P2Q03",
+            "sourceNumber": 3,
+            "text": "Tiến hành thí nghiệm phản ứng tráng gương của glucose theo các bước sau đây:<br>Bước 1: Cho 1 ml AgNO<sub>3</sub> 1% vào ống nghiệm sạch.<br>Bước 2: Nhỏ từng giọt dung dịch NH<sub>3</sub> 5% vào ống nghiệm và lắc đều đến khi thu được dung dịch trong suốt thì dừng lại.<br>Bước 3: Thêm tiếp 1 ml dung dịch glucose vào ống nghiệm chứa dung dịch thu được sau bước 2.<br>Bước 4: Lắc đều ống nghiệm, đun cách thủy (hoặc đặt trong cốc nước nóng) vài phút ở 60 – 70<sup>o</sup>C.",
+            "plainText": "Tiến hành thí nghiệm phản ứng tráng gương của glucose theo các bước sau đây:\nBước 1: Cho 1 ml AgNO3 1% vào ống nghiệm sạch.\nBước 2: Nhỏ từng giọt dung dịch NH3 5% vào ống nghiệm và lắc đều đến khi thu được dung dịch trong suốt thì dừng lại.\nBước 3: Thêm tiếp 1 ml dung dịch glucose vào ống nghiệm chứa dung dịch thu được sau bước 2.\nBước 4: Lắc đều ống nghiệm, đun cách thủy (hoặc đặt trong cốc nước nóng) vài phút ở 60 – 70oC.",
+            "statements": [
+                {
+                    "label": "a",
+                    "text": "Sau bước 3, đã có phản ứng tráng bạc xảy ra.",
+                    "plainText": "Sau bước 3, đã có phản ứng tráng bạc xảy ra.",
+                    "correctAnswer": false
+                },
+                {
+                    "label": "b",
+                    "text": "Sau bước 4, thành ống nghiệm có một lớp Ag bám trên thành ống nghiệm.",
+                    "plainText": "Sau bước 4, thành ống nghiệm có một lớp Ag bám trên thành ống nghiệm.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "c",
+                    "text": "Trong phản ứng trên, glucose đóng vai trò là chất khử.",
+                    "plainText": "Trong phản ứng trên, glucose đóng vai trò là chất khử.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "d",
+                    "text": "Có thể thay thế dung dịch NH<sub>3</sub> bằng dung dịch NaOH vẫn thu được kết quả tương tự",
+                    "plainText": "Có thể thay thế dung dịch NH3 bằng dung dịch NaOH vẫn thu được kết quả tương tự",
+                    "correctAnswer": false
+                }
+            ]
+        },
+        {
+            "id": "P2Q04",
+            "sourceNumber": 4,
+            "text": "Tiến hành thí nghiệm theo các bước sau:<br>- Bước 1: Cho 0,5 mL dung dịch CuSO<sub>4</sub> 5% vào ống nghiệm sạch.<br>- Bước 2: Thêm 2 mL dung dịch NaOH 10% vào ống nghiệm, lắc đều, gạn phần dung dịch, giữ lại kết tủa.<br>- Bước 3: Thêm tiếp 3mL dung dịch glucose 2% vào ống nghiệm, lắc đều.",
+            "plainText": "Tiến hành thí nghiệm theo các bước sau:\n- Bước 1: Cho 0,5 mL dung dịch CuSO4 5% vào ống nghiệm sạch.\n- Bước 2: Thêm 2 mL dung dịch NaOH 10% vào ống nghiệm, lắc đều, gạn phần dung dịch, giữ lại kết tủa.\n- Bước 3: Thêm tiếp 3mL dung dịch glucose 2% vào ống nghiệm, lắc đều.",
+            "statements": [
+                {
+                    "label": "a",
+                    "text": "Ở bước 2, thu được kết tủa có màu trắng hơi xanh.",
+                    "plainText": "Ở bước 2, thu được kết tủa có màu trắng hơi xanh.",
+                    "correctAnswer": false
+                },
+                {
+                    "label": "b",
+                    "text": "Sau bước 3, kết tủa đã bị hoà tan, thu được dung dịch màu xanh lam.",
+                    "plainText": "Sau bước 3, kết tủa đã bị hoà tan, thu được dung dịch màu xanh lam.",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "c",
+                    "text": "Thí nghiệm trên chứng minh glucose có tính chất của polyalcohol (alcohol đa chức).",
+                    "plainText": "Thí nghiệm trên chứng minh glucose có tính chất của polyalcohol (alcohol đa chức).",
+                    "correctAnswer": true
+                },
+                {
+                    "label": "d",
+                    "text": "Ở bước 3, thay glucose bằng fructose, maltose, saccharose, tinh bột thì hiện tượng xảy ra vẫn tương tự.",
+                    "plainText": "Ở bước 3, thay glucose bằng fructose, maltose, saccharose, tinh bột thì hiện tượng xảy ra vẫn tương tự.",
+                    "correctAnswer": false
+                }
+            ]
+        }
+    ],
+    "part3": [
+        {
+            "id": "P3Q01",
+            "sourceNumber": 1,
+            "text": "Cho các chất sau: glucose, fructose, maltose, saccharose, tinh bột và cellulose. Số chất thuộc nhóm polysaccharide là",
+            "plainText": "Cho các chất sau: glucose, fructose, maltose, saccharose, tinh bột và cellulose. Số chất thuộc nhóm polysaccharide là",
+            "acceptedAnswers": [
+                "2"
+            ],
+            "correctAnswer": "2"
+        },
+        {
+            "id": "P3Q02",
+            "sourceNumber": 2,
+            "text": "Cho dãy các chất: saccharose, fructose, amylose, amylopectin và cellulose. Có bao nhiêu chất trong dãy khi thủy phân hoàn toàn tạo thành sản phẩm duy nhất là glucose?",
+            "plainText": "Cho dãy các chất: saccharose, fructose, amylose, amylopectin và cellulose. Có bao nhiêu chất trong dãy khi thủy phân hoàn toàn tạo thành sản phẩm duy nhất là glucose?",
+            "acceptedAnswers": [
+                "3"
+            ],
+            "correctAnswer": "3"
+        },
+        {
+            "id": "P3Q03",
+            "sourceNumber": 3,
+            "text": "Phát biểu về tính chất hoá học của glucose và fructose:<br>1. Đều phản ứng được với thuốc thử Tollens.<br>2. Đều làm mất màu nước bromine.<br>3. Dung dịch mỗi chất đều hoà tan được Cu(OH)<sub>2</sub>.<br>4. Đều phản ứng được với Cu(OH)<sub>2</sub> trong kiềm nóng tạo kết tủa đỏ gạch.<br>Đánh số các phát biểu đúng theo thứ tự tăng dần?( 123, 1234,…..)",
+            "plainText": "Phát biểu về tính chất hoá học của glucose và fructose:\n1. Đều phản ứng được với thuốc thử Tollens.\n2. Đều làm mất màu nước bromine.\n3. Dung dịch mỗi chất đều hoà tan được Cu(OH)2.\n4. Đều phản ứng được với Cu(OH)2 trong kiềm nóng tạo kết tủa đỏ gạch.\nĐánh số các phát biểu đúng theo thứ tự tăng dần?( 123, 1234,…..)",
+            "acceptedAnswers": [
+                "134"
+            ],
+            "correctAnswer": "134"
+        },
+        {
+            "id": "P3Q04",
+            "sourceNumber": 4,
+            "text": "Cho các chất sau: glucose, fructose, maltose, saccharose, cellulose và tinh bột. Trong số các chất trên, có bao nhiêu chất tạo phức màu xanh lam với Cu(OH)<sub>2</sub> trong môi trường kiềm?",
+            "plainText": "Cho các chất sau: glucose, fructose, maltose, saccharose, cellulose và tinh bột. Trong số các chất trên, có bao nhiêu chất tạo phức màu xanh lam với Cu(OH)2 trong môi trường kiềm?",
+            "acceptedAnswers": [
+                "4"
+            ],
+            "correctAnswer": "4"
+        },
+        {
+            "id": "P3Q05",
+            "sourceNumber": 5,
+            "text": "X là một chất hữu cơ mạch hở chứa C, H và N trong đó N chiếm 23,73% về khối lượng. Biết X tác dụng được với HCl theo tỉ lệ mol 1 : 1. Có bao nhiêu đồng phân cấu tạo của X thỏa mãn?",
+            "plainText": "X là một chất hữu cơ mạch hở chứa C, H và N trong đó N chiếm 23,73% về khối lượng. Biết X tác dụng được với HCl theo tỉ lệ mol 1 : 1. Có bao nhiêu đồng phân cấu tạo của X thỏa mãn?",
+            "acceptedAnswers": [
+                "4"
+            ],
+            "correctAnswer": "4"
+        },
+        {
+            "id": "P3Q06",
+            "sourceNumber": 6,
+            "text": "Số nguyên tử hydrogen có trong phân tử oleic acid là bao nhiêu?",
+            "plainText": "Số nguyên tử hydrogen có trong phân tử oleic acid là bao nhiêu?",
+            "acceptedAnswers": [
+                "34"
+            ],
+            "correctAnswer": "34"
+        }
+    ]
+};
+
+        let state = {
+            hoTen: "",
+            lop: "",
+            attemptId: "",
+            started: false,
+            isSubmitting: false,
+            isSubmitted: false,
+            answersRevealed: false,
+            startTimeMs: 0,
+            endTimeMs: 0,
+            serverStartTimeText: "",
+            shuffled: { part1: [], part2: [], part3: [] },
+            answers: { part1: {}, part2: {}, part3: {} }, // Will hold current answers
+            timerInterval: null
+        };
+
+        const scoreMapPart2 = { 0: 0, 1: 0.10, 2: 0.25, 3: 0.50, 4: 1.00 };
+
+        function generateUUID() {
+            if (crypto && crypto.randomUUID) {
+                return crypto.randomUUID();
+            }
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = (Math.random() * 16) | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function shuffleArray(array) {
+            let arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                let j;
+                if (crypto && crypto.getRandomValues) {
+                    const randomBuffer = new Uint32Array(1);
+                    crypto.getRandomValues(randomBuffer);
+                    j = randomBuffer[0] % (i + 1);
+                } else {
+                    j = Math.floor(Math.random() * (i + 1));
+                }
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function normalizeNumber(str) {
+            if (!str) return NaN;
+            let s = str.trim().toLowerCase().replace(',', '.');
+            return parseFloat(s);
+        }
+
+        function countAnswered() {
+            let count = 0;
+            state.shuffled.part1.forEach(q => { if(state.answers.part1[q.id]) count++; });
+            state.shuffled.part2.forEach(q => { 
+                const ans = state.answers.part2[q.id] || {};
+                if(Object.keys(ans).length === 4) count++; 
+            });
+            state.shuffled.part3.forEach(q => { if(state.answers.part3[q.id] && state.answers.part3[q.id].trim() !== "") count++; });
+            document.getElementById('progress-text').innerText = `${count}/28`;
+        }
+
+        function handleP1Change(qId, key) {
+            if (state.isSubmitted) return;
+            state.answers.part1[qId] = key;
+            countAnswered();
+        }
+
+        function handleP2Change(qId, label, val) {
+            if (state.isSubmitted) return;
+            if (!state.answers.part2[qId]) state.answers.part2[qId] = {};
+            state.answers.part2[qId][label] = val;
+            countAnswered();
+        }
+
+        function handleP3Change(qId, val) {
+            if (state.isSubmitted) return;
+            state.answers.part3[qId] = val;
+            countAnswered();
+        }
+
+        function renderExam() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            let html = '';
+
+            // PART 1
+            html += `<div class="glass-panel rounded-2xl p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-blue-700 mb-2 border-b-2 border-blue-100 pb-2">PHẦN 1: Trắc nghiệm nhiều lựa chọn (4,5 điểm)</h3>
+                        <p class="text-sm text-gray-600 mb-6 italic">Học sinh chọn 01 phương án đúng cho mỗi câu hỏi.</p>
+                        <div class="space-y-8">`;
+            
+            state.shuffled.part1.forEach((q, index) => {
+                html += `<div class="question-block bg-white p-4 rounded-xl border border-gray-100 shadow-sm" id="block-${q.id}">
+                            <p class="font-semibold text-gray-800 mb-4"><span class="text-blue-600 mr-1">Câu ${index + 1}:</span> ${q.text}</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">`;
+                q.options.forEach(opt => {
+                    const inputId = `r_${q.id}_${opt.key}`;
+                    html += `
+                        <label class="relative flex items-start p-3 cursor-pointer rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors group">
+                            <input type="radio" name="${q.id}" value="${opt.key}" id="${inputId}" class="radio-custom sr-only" onchange="handleP1Change('${q.id}', '${opt.key}')">
+                            <div class="w-full text-sm text-gray-700 flex items-center border border-transparent rounded-lg absolute inset-0 -z-10 group-hover:border-blue-200 transition-colors"></div>
+                            <div class="flex items-center gap-3 relative z-10 w-full">
+                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center bg-white group-hover:border-blue-400 indicator transition-colors">
+                                    <div class="w-3 h-3 rounded-full bg-blue-500 scale-0 transition-transform"></div>
+                                </div>
+                                <span class="font-medium text-gray-900 w-6">${opt.key}.</span>
+                                <span class="flex-1">${opt.text}</span>
+                            </div>
+                        </label>
+                        <style>#${inputId}:checked ~ .z-10 .indicator { border-color: #3b82f6; } #${inputId}:checked ~ .z-10 .indicator div { transform: scale(1); }</style>
+                    `;
+                });
+                html += `</div>
+                         <div id="feedback-${q.id}" class="mt-3 text-sm font-medium hidden rounded p-2"></div>
+                      </div>`;
+            });
+            html += `</div></div>`;
+
+            // PART 2
+            html += `<div class="glass-panel rounded-2xl p-6 md:p-8 mt-8">
+                        <h3 class="text-xl font-bold text-purple-700 mb-2 border-b-2 border-purple-100 pb-2">PHẦN 2: Trắc nghiệm Đúng/Sai (4,0 điểm)</h3>
+                        <p class="text-sm text-gray-600 mb-6 italic">Học sinh chọn Đúng hoặc Sai cho mỗi ý a, b, c, d.</p>
+                        <div class="space-y-8">`;
+            
+            state.shuffled.part2.forEach((q, index) => {
+                html += `<div class="question-block bg-white p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm" id="block-${q.id}">
+                            <p class="font-semibold text-gray-800 mb-4"><span class="text-purple-600 mr-1">Câu ${index + 1}:</span> ${q.text}</p>
+                            <div class="space-y-3">`;
+                q.statements.forEach(stmt => {
+                    const name = `${q.id}_${stmt.label}`;
+                    html += `
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200 gap-3">
+                            <div class="text-sm text-gray-800 flex-1"><span class="font-medium mr-2">${stmt.label})</span>${stmt.text}</div>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer relative">
+                                    <input type="radio" name="${name}" value="true" class="statement-radio sr-only" onchange="handleP2Change('${q.id}', '${stmt.label}', true)">
+                                    <div class="px-4 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors text-center w-16">Đúng</div>
+                                </label>
+                                <label class="cursor-pointer relative">
+                                    <input type="radio" name="${name}" value="false" class="statement-radio sr-only" onchange="handleP2Change('${q.id}', '${stmt.label}', false)">
+                                    <div class="px-4 py-1.5 rounded text-sm font-medium border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors text-center w-16">Sai</div>
+                                </label>
+                            </div>
+                            <div id="feedback-${q.id}-${stmt.label}" class="w-6 h-6 flex items-center justify-center shrink-0 hidden"></div>
+                        </div>
+                    `;
+                });
+                html += `</div>
+                         <div id="score-${q.id}" class="mt-3 text-sm font-bold text-purple-700 hidden text-right"></div>
+                      </div>`;
+            });
+            html += `</div></div>`;
+
+            // PART 3
+            html += `<div class="glass-panel rounded-2xl p-6 md:p-8 mt-8">
+                        <h3 class="text-xl font-bold text-pink-700 mb-2 border-b-2 border-pink-100 pb-2">PHẦN 3: Trả lời ngắn (1,5 điểm)</h3>
+                        <p class="text-sm text-gray-600 mb-6 italic">Học sinh điền đáp án vào ô trống.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
+            
+            state.shuffled.part3.forEach((q, index) => {
+                html += `<div class="question-block bg-white p-4 sm:p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between" id="block-${q.id}">
+                            <p class="font-semibold text-gray-800 mb-4 text-sm sm:text-base"><span class="text-pink-600 mr-1">Câu ${index + 1}:</span> ${q.text}</p>
+                            <div>
+                                <input type="text" id="input-${q.id}" oninput="handleP3Change('${q.id}', this.value)" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 outline-none text-center font-medium" placeholder="Nhập câu trả lời">
+                                <div id="feedback-${q.id}" class="mt-2 text-sm font-medium hidden text-center rounded p-1"></div>
+                            </div>
+                      </div>`;
+            });
+            html += `</div></div>`;
+
+            container.innerHTML = html;
+            
+            // Typeset MathJax
+            if (window.MathJax) {
+                MathJax.typesetPromise([container]).catch(function (err) {
+                    console.error('MathJax error: ', err.message);
+                });
+            }
+        }
+
+        async function handleStart() {
+            const hoTen = document.getElementById('input-hoten').value.trim();
+            const lop = document.getElementById('input-lop').value.trim();
+            const errDiv = document.getElementById('login-error');
+            
+            if (!hoTen || !lop) {
+                errDiv.innerText = "Vui lòng nhập đầy đủ Họ tên và Lớp.";
+                errDiv.classList.remove('hidden');
+                return;
+            }
+            errDiv.classList.add('hidden');
+
+            state.hoTen = hoTen;
+            state.lop = lop;
+            state.attemptId = generateUUID();
+
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('loading-screen').classList.remove('hidden');
+
+            try {
+                // Check if URL is configured
+                if(APPS_SCRIPT_WEB_APP_URL.includes("DAN_URL_WEB_APP")) {
+                    console.warn("Chưa cấu hình URL Apps Script thật. Chạy chế độ test local.");
+                    startExamLocal();
+                    return;
+                }
+
+                const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        action: "START",
+                        hoTen: state.hoTen,
+                        lop: state.lop,
+                        attemptId: state.attemptId
+                    }),
+                    redirect: "follow"
+                });
+
+                const result = await response.json();
+                
+                if (result.status === "SUCCESS") {
+                    state.serverStartTimeText = result.thoiGianVaoLam || "";
+                    startExamLocal();
+                } else {
+                    throw new Error(result.message || "Lớp hoặc học sinh không hợp lệ.");
+                }
+            } catch (error) {
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('login-screen').classList.remove('hidden');
+                errDiv.innerText = error.message || "Lỗi kết nối đến máy chủ. Vui lòng thử lại.";
+                errDiv.classList.remove('hidden');
+            }
+        }
+
+        function startExamLocal() {
+            state.started = true;
+            state.startTimeMs = Date.now();
+            
+            // Shuffle contents
+            state.shuffled.part1 = shuffleArray(rawData.part1);
+            state.shuffled.part2 = shuffleArray(rawData.part2);
+            state.shuffled.part3 = shuffleArray(rawData.part3);
+            
+            document.getElementById('student-info-display').innerText = `${state.hoTen} - Lớp ${state.lop}`;
+            
+            renderExam();
+            countAnswered();
+
+            document.getElementById('loading-screen').classList.add('hidden');
+            document.getElementById('exam-screen').classList.remove('hidden');
+
+            state.timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            if (!state.started || state.isSubmitted) return;
+            
+            const elapsed = Math.floor((Date.now() - state.startTimeMs) / 1000);
+            let remaining = rawData.durationSeconds - elapsed;
+            
+            if (remaining <= 0) {
+                remaining = 0;
+                clearInterval(state.timerInterval);
+                submitExam();
+            }
+
+            const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+            const s = (remaining % 60).toString().padStart(2, '0');
+            const timerEl = document.getElementById('timer-display');
+            timerEl.innerText = `${m}:${s}`;
+
+            if (remaining <= 60) {
+                timerEl.className = "text-2xl font-bold font-mono px-3 py-1 rounded-lg bg-red-100 timer-danger";
+            } else if (remaining <= 300) {
+                timerEl.className = "text-2xl font-bold font-mono px-3 py-1 rounded-lg bg-yellow-100 timer-warning";
+            }
+        }
+
+        function gradeAndBuildDetails() {
+            let chiTietBaiLam = [];
+            let diemP1 = 0, diemP2 = 0, diemP3 = 0;
+            let soDung = 0, soChuaLam = 0, soSai = 0;
+            let tongSoCau = 28;
+
+            // Chấm Phần 1
+            state.shuffled.part1.forEach((q, index) => {
+                const sAns = state.answers.part1[q.id];
+                const isComplete = !!sAns;
+                const isCorrect = sAns === q.correctAnswer;
+                const score = isCorrect ? 0.25 : 0;
+                
+                diemP1 += score;
+                if (!isComplete) soChuaLam++;
+                else if (isCorrect) soDung++;
+                
+                chiTietBaiLam.push({
+                    part: 1, order: index + 1, questionId: q.id,
+                    questionText: q.plainText, sourceType: "multiple_choice", mediaSrc: "",
+                    options: q.options.map(o => ({ key: o.key, text: o.plainText })),
+                    studentAnswer: sAns || "", correctAnswer: q.correctAnswer,
+                    isCorrect: isCorrect, isComplete: isComplete,
+                    score: score, maxScore: 0.25, statements: []
+                });
+            });
+
+            // Chấm Phần 2
+            state.shuffled.part2.forEach((q, index) => {
+                let correctCount = 0;
+                let statementsData = [];
+                let isComplete = true;
+                let sAnsStr = [];
+                let cAnsStr = [];
+
+                q.statements.forEach(stmt => {
+                    const sAns = state.answers.part2[q.id] ? state.answers.part2[q.id][stmt.label] : undefined;
+                    const cAns = stmt.correctAnswer;
+                    if (sAns === undefined) isComplete = false;
+                    
+                    const isStmtCorrect = (sAns === cAns);
+                    if (isStmtCorrect && sAns !== undefined) correctCount++;
+
+                    const sAnsText = sAns === true ? "Đúng" : (sAns === false ? "Sai" : "");
+                    const cAnsText = cAns ? "Đúng" : "Sai";
+                    
+                    if(sAnsText) sAnsStr.push(`${stmt.label}: ${sAnsText}`);
+                    cAnsStr.push(`${stmt.label}: ${cAnsText}`);
+
+                    statementsData.push({
+                        label: stmt.label, text: stmt.plainText,
+                        studentAnswer: sAnsText, correctAnswer: cAnsText,
+                        isCorrect: isStmtCorrect
+                    });
+                });
+
+                const score = scoreMapPart2[correctCount];
+                diemP2 += score;
+                
+                if (!isComplete) soChuaLam++;
+                else if (correctCount === 4) soDung++;
+
+                chiTietBaiLam.push({
+                    part: 2, order: index + 1, questionId: q.id,
+                    questionText: q.plainText, sourceType: "true_false", mediaSrc: "",
+                    options: [], studentAnswer: sAnsStr.join("; "), correctAnswer: cAnsStr.join("; "),
+                    isCorrect: (correctCount === 4), isComplete: isComplete,
+                    score: score, maxScore: 1.00, statements: statementsData
+                });
+            });
+
+            // Chấm Phần 3
+            state.shuffled.part3.forEach((q, index) => {
+                const sAnsRaw = state.answers.part3[q.id] || "";
+                const isComplete = sAnsRaw.trim() !== "";
+                
+                let isCorrect = false;
+                const sAnsNum = normalizeNumber(sAnsRaw);
+                const cAnsNum = normalizeNumber(q.correctAnswer);
+                
+                if (!isNaN(sAnsNum) && !isNaN(cAnsNum) && sAnsNum === cAnsNum) {
+                    isCorrect = true;
+                } else if (q.acceptedAnswers.includes(sAnsRaw.trim())) {
+                    isCorrect = true;
+                }
+
+                const score = isCorrect ? 0.25 : 0;
+                diemP3 += score;
+
+                if (!isComplete) soChuaLam++;
+                else if (isCorrect) soDung++;
+
+                chiTietBaiLam.push({
+                    part: 3, order: index + 1, questionId: q.id,
+                    questionText: q.plainText, sourceType: "short_answer", mediaSrc: "",
+                    options: [], studentAnswer: sAnsRaw, correctAnswer: q.correctAnswer,
+                    isCorrect: isCorrect, isComplete: isComplete,
+                    score: score, maxScore: 0.25, statements: []
+                });
+            });
+
+            soSai = tongSoCau - soDung - soChuaLam;
+            const totalScore = diemP1 + diemP2 + diemP3;
+
+            return {
+                diem: parseFloat(totalScore.toFixed(2)),
+                soDung, soSai, soChuaLam, tongSoCau,
+                diemPhan1: parseFloat(diemP1.toFixed(2)),
+                diemPhan2: parseFloat(diemP2.toFixed(2)),
+                diemPhan3: parseFloat(diemP3.toFixed(2)),
+                chiTietBaiLam
+            };
+        }
+
+        function confirmSubmit() {
+            if(state.isSubmitting || state.isSubmitted) return;
+            const elapsed = Math.floor((Date.now() - state.startTimeMs) / 1000);
+            if (elapsed < rawData.durationSeconds) {
+                if(!confirm("Em có chắc chắn muốn nộp bài?")) return;
+            }
+            submitExam();
+        }
+
+        async function submitExam() {
+            if(state.isSubmitting || state.isSubmitted) return;
+            state.isSubmitting = true;
+            state.isSubmitted = true;
+            state.endTimeMs = Date.now();
+            clearInterval(state.timerInterval);
+
+            // Khóa giao diện
+            document.querySelectorAll('input').forEach(el => el.disabled = true);
+            document.getElementById('btn-submit').classList.add('hidden');
+            document.getElementById('timer-display').innerText = "Đã nộp";
+            document.getElementById('timer-display').className = "text-xl font-bold text-gray-500 bg-gray-200 px-3 py-1 rounded-lg";
+
+            const resultData = gradeAndBuildDetails();
+            const thoiGianLamGiay = Math.floor((state.endTimeMs - state.startTimeMs) / 1000);
+
+            const payload = {
+                action: "SUBMIT",
+                hoTen: state.hoTen,
+                lop: state.lop,
+                attemptId: state.attemptId,
+                mon: "Hóa học 12",
+                ...resultData,
+                thoiGianVaoLam: state.serverStartTimeText,
+                thoiGianLamGiay: thoiGianLamGiay
+            };
+
+            // Render local results first
+            renderResultsModal(payload);
+            document.getElementById('result-sheet-status').innerHTML = `<span>Lưu dữ liệu:</span> <span class="text-blue-500">Đang lưu...</span>`;
+            document.getElementById('result-drive-status').innerHTML = `<span>Lưu bài làm (PDF):</span> <span class="text-blue-500">Đang tạo file...</span>`;
+            document.getElementById('result-modal').classList.remove('hidden');
+
+            try {
+                if(APPS_SCRIPT_WEB_APP_URL.includes("DAN_URL_WEB_APP")) {
+                    document.getElementById('result-sheet-status').innerHTML = `<span>Lưu dữ liệu:</span> <span class="text-yellow-600 font-medium">Chế độ Test Local</span>`;
+                    document.getElementById('result-drive-status').innerHTML = `<span>Lưu bài làm (PDF):</span> <span class="text-yellow-600 font-medium">Bỏ qua (Local)</span>`;
+                    return;
+                }
+
+                const response = await fetch(APPS_SCRIPT_WEB_APP_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload),
+                    redirect: "follow"
+                });
+
+                const res = await response.json();
+                
+                if (res.status === "SUCCESS") {
+                    document.getElementById('result-sheet-status').innerHTML = `<span>Lưu dữ liệu:</span> <span class="text-emerald-600 font-medium">Thành công (Google Sheet)</span>`;
+                    if (res.driveSaved === false) {
+                        document.getElementById('result-drive-status').innerHTML = `<span>Lưu bài làm:</span> <span class="text-red-500 font-medium text-right text-xs ml-2">Điểm đã lưu, nhưng hồ sơ PDF lỗi. Báo giáo viên.</span>`;
+                    } else {
+                        document.getElementById('result-drive-status').innerHTML = `<span>Lưu bài làm:</span> <span class="text-emerald-600 font-medium">Đã lưu PDF</span>`;
+                    }
+                    if(res.thoiGianVaoLam) document.getElementById('result-start-time').innerText = res.thoiGianVaoLam;
+                    if(res.thoiGianNopBai) document.getElementById('result-submit-time').innerText = res.thoiGianNopBai;
+                } else {
+                    throw new Error(res.message || "Lỗi lưu dữ liệu.");
+                }
+
+            } catch (error) {
+                console.error("Lỗi khi gửi bài:", error);
+                document.getElementById('result-sheet-status').innerHTML = `<span>Lưu dữ liệu:</span> <span class="text-red-600 font-medium">Lỗi kết nối</span>`;
+                document.getElementById('result-drive-status').innerHTML = `<span>Lưu bài làm (PDF):</span> <span class="text-red-600 font-medium">Không thể lưu</span>`;
+                alert("Có lỗi xảy ra khi lưu bài lên hệ thống. Vui lòng không đóng trình duyệt và báo ngay cho giáo viên coi thi. Lỗi: " + error.message);
+            }
+        }
+
+        function renderResultsModal(data) {
+            document.getElementById('result-student-info').innerText = `${state.hoTen} - Lớp ${state.lop}`;
+            document.getElementById('result-total-score').innerHTML = `${data.diem.toFixed(2)}<span class="text-2xl text-gray-400">/10</span>`;
+            document.getElementById('result-p1-score').innerText = `${data.diemPhan1.toFixed(2)}/4.50`;
+            document.getElementById('result-p2-score').innerText = `${data.diemPhan2.toFixed(2)}/4.00`;
+            document.getElementById('result-p3-score').innerText = `${data.diemPhan3.toFixed(2)}/1.50`;
+            
+            const mins = Math.floor(data.thoiGianLamGiay / 60);
+            const secs = data.thoiGianLamGiay % 60;
+            document.getElementById('result-duration').innerText = `${mins} phút ${secs} giây`;
+            
+            const now = new Date();
+            document.getElementById('result-start-time').innerText = state.serverStartTimeText || new Date(state.startTimeMs).toLocaleString('vi-VN');
+            document.getElementById('result-submit-time').innerText = now.toLocaleString('vi-VN');
+        }
+
+        function revealAnswers() {
+            if(!state.isSubmitted) return;
+            state.answersRevealed = true;
+            document.getElementById('result-modal').classList.add('hidden');
+            
+            // Highlight P1
+            state.shuffled.part1.forEach(q => {
+                const sAns = state.answers.part1[q.id];
+                const cAns = q.correctAnswer;
+                const fb = document.getElementById(`feedback-${q.id}`);
+                fb.classList.remove('hidden');
+                
+                if (sAns === cAns) {
+                    fb.innerHTML = `✅ Chính xác (+0,25đ)`;
+                    fb.className = "mt-3 text-sm font-medium rounded p-2 bg-emerald-50 text-emerald-700 border border-emerald-200";
+                } else {
+                    fb.innerHTML = `❌ Sai (Đã chọn: ${sAns || 'Chưa chọn'}). Đáp án đúng: <span class="font-bold text-blue-700">${cAns}</span>`;
+                    fb.className = "mt-3 text-sm font-medium rounded p-2 bg-red-50 text-red-700 border border-red-200";
+                }
+                
+                // Highlight the correct option
+                const correctLabel = document.getElementById(`r_${q.id}_${cAns}`).parentElement;
+                correctLabel.classList.add('border-emerald-400', 'bg-emerald-50');
+            });
+
+            // Highlight P2
+            state.shuffled.part2.forEach(q => {
+                let correctCount = 0;
+                q.statements.forEach(stmt => {
+                    const sAns = state.answers.part2[q.id] ? state.answers.part2[q.id][stmt.label] : undefined;
+                    const cAns = stmt.correctAnswer;
+                    const fb = document.getElementById(`feedback-${q.id}-${stmt.label}`);
+                    fb.classList.remove('hidden');
+                    
+                    if (sAns === cAns) {
+                        correctCount++;
+                        fb.innerHTML = `<svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+                    } else {
+                        fb.innerHTML = `<svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                        // Show what correct should be visually
+                        const targetVal = cAns ? "true" : "false";
+                        const input = document.querySelector(`input[name="${q.id}_${stmt.label}"][value="${targetVal}"]`);
+                        if(input) {
+                            input.nextElementSibling.classList.add('border-emerald-500', 'text-emerald-600', 'bg-emerald-50');
+                        }
+                    }
+                });
+                
+                const scoreDiv = document.getElementById(`score-${q.id}`);
+                scoreDiv.classList.remove('hidden');
+                scoreDiv.innerHTML = `Điểm câu này: <span class="text-xl">${scoreMapPart2[correctCount].toFixed(2)}</span>`;
+            });
+
+            // Highlight P3
+            state.shuffled.part3.forEach(q => {
+                const sAnsRaw = state.answers.part3[q.id] || "";
+                let isCorrect = false;
+                const sAnsNum = normalizeNumber(sAnsRaw);
+                const cAnsNum = normalizeNumber(q.correctAnswer);
+                if (!isNaN(sAnsNum) && !isNaN(cAnsNum) && sAnsNum === cAnsNum) isCorrect = true;
+                else if (q.acceptedAnswers.includes(sAnsRaw.trim())) isCorrect = true;
+
+                const inputEl = document.getElementById(`input-${q.id}`);
+                const fb = document.getElementById(`feedback-${q.id}`);
+                fb.classList.remove('hidden');
+
+                if (isCorrect) {
+                    inputEl.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-700');
+                    fb.innerHTML = `✅ Chính xác (+0,25đ)`;
+                    fb.className = "mt-2 text-sm font-medium rounded p-1 text-emerald-600";
+                } else {
+                    inputEl.classList.add('border-red-400', 'bg-red-50', 'text-red-700');
+                    fb.innerHTML = `❌ Đáp án đúng: <span class="font-bold text-blue-700">${q.correctAnswer}</span>`;
+                    fb.className = "mt-2 text-sm font-medium rounded p-1 text-red-600";
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function logout() {
+            if(confirm("Thoát khỏi phiên làm bài hiện tại?")) {
+                window.location.reload();
+            }
+        }
+
+        // Prevent accidental reloads if started and not submitted
+        window.addEventListener('beforeunload', function (e) {
+            if (state.started && !state.isSubmitted) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+    </script>
+</body>
+</html>
+
